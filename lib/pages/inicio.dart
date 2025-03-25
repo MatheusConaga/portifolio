@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portifolio/pages/apresentacao.dart';
-import 'package:portifolio/pages/contato.dart';
-import 'package:portifolio/pages/direitos.dart';
-import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/styles/appColors.dart';
 
 class Inicio extends StatefulWidget {
@@ -15,23 +11,10 @@ class Inicio extends StatefulWidget {
 class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
-    var largura = MediaQuery.of(context).size.width ;
-    var altura = MediaQuery.of(context).size.height;
-    var alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
-
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: altura * 0.15,
-        title: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            "Matheus Lula",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: altura * 0.05 > 30 ? 30 : altura * 0.05,
-            ),
-          ),
-        ),
+        toolbarHeight: 80,
+        title: Text("Matheus Lula", style: TextStyle(color: Colors.white)),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -42,26 +25,84 @@ class _InicioState extends State<Inicio> {
         ),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(top: alturaBarraStatus),
-          child: Column(
+        padding: EdgeInsets.only(top: 30),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Apresentacao(),
+              Container(
+                width: 400,
+                height: 400,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 8,
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/perfil_port.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Sobre(),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Olá, eu sou o",
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                    ),
+                  ),
+                  Text(
+                    "Matheus Lula",
+                    style: TextStyle(
+                      color: AppColors.blue,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 60,
+                    ),
+                  ),
+
+                  Container(
+                    width: 600,
+                    height: 3,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "Desenvolvedor Mobile",
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                    ),
+                  ),
+
+                  Row(
+                    children: [
+                      Image.asset(
+                        "assets/tecno/flutter.png",
+                        width: 50,
+                      ),
+                      SizedBox(width: 20,),
+                      Image.asset(
+                        "assets/tecno/react.png",
+                        width: 50,
+                      ),
+                      SizedBox(width: 20,),
+                      Image.asset(
+                        "assets/tecno/kotlin.png",
+                        width: 50,
+                      ),
+                    ],
+                  ),
+
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Contato(),
-              ),
-              Direitos(),
             ],
           ),
-      ),
 
+      ),
     );
   }
 }
