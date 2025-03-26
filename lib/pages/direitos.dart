@@ -11,9 +11,6 @@ class Direitos extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width ;
 
     return Container(
-      decoration: BoxDecoration(
-        // color: AppColors.bgblue.withOpacity(0.3),
-      ),
       child: Text(
         "Copyright © 2025. Desenvolvido em Flutter  por Matheus Lula.",
         style: TextStyle(

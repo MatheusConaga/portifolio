@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/pages/apresentacao.dart';
 import 'package:portifolio/pages/contato.dart';
 import 'package:portifolio/pages/direitos.dart';
+import 'package:portifolio/pages/projetos.dart';
 import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/styles/appColors.dart';
 
@@ -52,6 +53,10 @@ class _InicioState extends State<Inicio> {
               Padding(
                 padding: EdgeInsets.only(bottom: altura * 0.2),
                 child: Sobre(),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: altura * 0.2),
+                child: Projetos(),
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: altura * 0.2),

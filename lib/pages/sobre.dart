@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
 
 class Sobre extends StatelessWidget {
@@ -16,24 +17,7 @@ class Sobre extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-           Row(
-             children: [
-               Icon(
-                 Icons.arrow_forward_rounded,
-                 color: AppColors.blue,
-                 size: largura * 0.04,
-               ),
-               SizedBox(width: largura * 0.01,),
-               Text(
-                 "Sobre Mim",
-                 style: TextStyle(
-                   color: AppColors.blue,
-                   fontSize: largura * 0.03,
-                   fontWeight: FontWeight.bold,
-                 ),
-               ),
-             ],
-           ),
+           Secao(titulo: "Sobre mim"),
             Padding(
               padding: EdgeInsets.only(top: altura * 0.04, left: largura * 0.04, right: largura * 0.04),
               child: Container(
