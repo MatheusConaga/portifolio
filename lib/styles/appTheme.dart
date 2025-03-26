@@ -4,7 +4,8 @@ import 'appColors.dart';
 class AppTheme{
 
   static ThemeData theme = ThemeData(
-    scaffoldBackgroundColor: AppColors.darkblue,
+    scaffoldBackgroundColor: AppColors.bgblue,
+
   );
 
 }

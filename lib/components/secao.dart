@@ -15,20 +15,20 @@ class Secao extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width ;
 
     return Padding(
-      padding: EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(top: largura * 0.08, bottom: largura * 0.02,),
       child: Row(
         children: [
           Icon(
             Icons.arrow_forward_rounded,
-            color: AppColors.blue,
+            color: AppColors.info,
             size: largura * 0.04,
           ),
           SizedBox(width: largura * 0.01,),
           Text(
             this.titulo,
             style: TextStyle(
-              color: AppColors.blue,
-              fontSize: largura * 0.03,
+              color: AppColors.info,
+              fontSize: largura * 0.02,
               fontWeight: FontWeight.bold,
             ),
           ),

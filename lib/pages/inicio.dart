@@ -5,6 +5,7 @@ import 'package:portifolio/pages/direitos.dart';
 import 'package:portifolio/pages/projetos.dart';
 import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/spacing.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -22,7 +23,7 @@ class _InicioState extends State<Inicio> {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: altura * 0.15,
+        toolbarHeight: Dbar,
         title: FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
@@ -46,22 +47,10 @@ class _InicioState extends State<Inicio> {
         padding: EdgeInsets.only(top: alturaBarraStatus),
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Apresentacao(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Sobre(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Projetos(),
-              ),
-              Padding(
-                padding: EdgeInsets.only(bottom: altura * 0.2),
-                child: Contato(),
-              ),
+              Apresentacao(),
+              Sobre(),
+              Projetos(),
+              Contato(),
               Direitos(),
             ],
           ),

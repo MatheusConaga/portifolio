@@ -30,24 +30,31 @@ class _ProjectItemState extends State<ProjectItem> {
         await launchUrl(Uri.parse(widget.link),mode: LaunchMode.externalApplication);
       },
       child: Container(
-        width: largura * 0.25,
+        width: largura * 0.2,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-            color: AppColors.projblue,
+            color: AppColors.darkblue.withOpacity(0.9),
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.white, width: largura * 0.005,)
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.shadowblue.withOpacity(0.8),
+              spreadRadius: 2,
+              offset: Offset(20, 10),
+            ),
+          ],
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               widget.image,
-              width: largura * 0.15,
+              width: largura * 0.12,
             ),
             Text(
               widget.title,
               style: TextStyle(
                 color: AppColors.white,
-                fontSize: largura * 0.022,
+                fontSize: largura * 0.016,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -60,7 +67,7 @@ class _ProjectItemState extends State<ProjectItem> {
               widget.descript,
               style: TextStyle(
                 color: AppColors.white,
-                fontSize: largura * 0.016,
+                fontSize: largura * 0.013,
               ),
               textAlign: TextAlign.center,
             ),

@@ -18,23 +18,26 @@ class _ApresentacaoState extends State<Apresentacao> {
 
     return Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: largura * 0.3,
-            height: largura * 0.3,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.white,
-                width: largura * 0.01,
-              ),
-              image: DecorationImage(
-                image: AssetImage("assets/images/perfil_port.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+         Padding(
+           padding: EdgeInsets.only(right: 20),
+         child:  Container(
+           width: largura * 0.2,
+           height: largura * 0.2,
+           decoration: BoxDecoration(
+             shape: BoxShape.circle,
+             border: Border.all(
+               color: Colors.white,
+               width: largura * 0.005,
+             ),
+             image: DecorationImage(
+               image: AssetImage("assets/images/perfil_port.png"),
+               fit: BoxFit.cover,
+             ),
+           ),
+         ),
+         ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,20 +46,20 @@ class _ApresentacaoState extends State<Apresentacao> {
                 style: TextStyle(
                   color: AppColors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: largura * 0.03,
+                  fontSize: largura * 0.02,
                 ),
               ),
               Text(
                 "Matheus Lula",
                 style: TextStyle(
-                  color: AppColors.blue,
+                  color: AppColors.info,
                   fontWeight: FontWeight.bold,
-                  fontSize: largura * 0.05,
+                  fontSize: largura * 0.03,
                 ),
               ),
 
               Container(
-                width: largura * 0.5,
+                width: largura * 0.3,
                 height: largura * 0.004,
                 color: Colors.white,
               ),
@@ -65,27 +68,8 @@ class _ApresentacaoState extends State<Apresentacao> {
                 style: TextStyle(
                   color: AppColors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: largura * 0.03,
+                  fontSize: largura * 0.02,
                 ),
-              ),
-
-              Row(
-                children: [
-                  Image.asset(
-                    "assets/tecno/flutter.png",
-                    width: largura * 0.04,
-                  ),
-                  SizedBox(width: largura * 0.01,),
-                  Image.asset(
-                    "assets/tecno/react.png",
-                    width: largura * 0.04,
-                  ),
-                  SizedBox(width: largura * 0.01,),
-                  Image.asset(
-                    "assets/tecno/kotlin.png",
-                    width: largura * 0.04,
-                  ),
-                ],
               ),
 
             ],

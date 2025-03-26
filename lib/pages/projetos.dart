@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/components/projectItem.dart';
 import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/spacing.dart';
 
 class Projetos extends StatefulWidget {
   const Projetos({super.key});
@@ -18,13 +19,25 @@ class _ProjetosState extends State<Projetos> {
     var largura = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: EdgeInsets.only(left: 30, right: 30),
+      padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
       child: Column(
         children: [
          Secao(titulo: "Projetos"),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              ProjectItem(
+                title: "Delta Comerce",
+                descript: "Sistema de postagem e compra de produtos",
+                image: "assets/projeto/deltacomerce.png",
+                link: "https://github.com/MatheusConaga/olx_clone",
+              ),
+              ProjectItem(
+                title: "Delta Comerce",
+                descript: "Sistema de postagem e compra de produtos",
+                image: "assets/projeto/deltacomerce.png",
+                link: "https://github.com/MatheusConaga/olx_clone",
+              ),
               ProjectItem(
                 title: "Delta Comerce",
                 descript: "Sistema de postagem e compra de produtos",
