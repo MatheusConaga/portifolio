@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write  # Permite que a Action escreva no repositório
+  contents: write  # Garante que a Action pode escrever no repositório
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.x'  # Use a versão do Flutter compatível com seu projeto
+          flutter-version: '3.x'  # Use a versão correta do Flutter
 
       - name: Ativar suporte para Web no Flutter
         run: flutter config --enable-web
@@ -27,11 +27,11 @@ jobs:
       - name: Instalar dependências do Flutter
         run: flutter pub get
 
-      - name: Construir versão Web (sem --web-renderer)
-        run: flutter build web --release --base-href /portifolio/
+      - name: Construir versão Web
+        run: flutter build web --release
 
       - name: Deploy para GitHub Pages
         uses: bluefireteam/flutter-gh-pages@v7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           baseHref: /portifolio/
+          targetBranch: gh-pages
