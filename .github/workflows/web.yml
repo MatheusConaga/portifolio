@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.x'  # Use a versão correta do Flutter
+          flutter-version: '3.24.4'  # Use a versão correta do Flutter
 
       - name: Ativar suporte para Web no Flutter
         run: flutter config --enable-web
