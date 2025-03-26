@@ -35,4 +35,3 @@ jobs:
         with:
           baseHref: /portifolio/
           targetBranch: gh-pages
-          workingDir: build/web  # Aponta para os arquivos corretos
