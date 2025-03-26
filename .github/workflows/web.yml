@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write  # Garante que a Action pode escrever no repositório
+  contents: write
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Configurar Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.4'  # Use a versão correta do Flutter
+          flutter-version: '3.24.4'
 
       - name: Ativar suporte para Web no Flutter
         run: flutter config --enable-web
@@ -35,3 +35,4 @@ jobs:
         with:
           baseHref: /portifolio/
           targetBranch: gh-pages
+          workingDir: build/web  # Aponta para os arquivos corretos
