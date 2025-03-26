@@ -31,4 +31,3 @@ jobs:
         uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /portifolio/
-          github_token: ${{ secrets.GITHUB_TOKEN }}
