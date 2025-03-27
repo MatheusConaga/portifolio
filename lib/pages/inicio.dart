@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portifolio/components/button.dart';
+import 'package:portifolio/components/menu.dart';
+import 'package:portifolio/components/menuItem.dart';
 import 'package:portifolio/pages/apresentacao.dart';
 import 'package:portifolio/pages/contato.dart';
 import 'package:portifolio/pages/direitos.dart';
@@ -17,6 +19,55 @@ class Inicio extends StatefulWidget {
 }
 
 class _InicioState extends State<Inicio> {
+
+  final ScrollController _scrollController = ScrollController();
+  final GlobalKey _apresentacaoKey = GlobalKey();
+  final GlobalKey _sobreKey = GlobalKey();
+  final GlobalKey _tecnologiasKey = GlobalKey();
+  final GlobalKey _projetosKey = GlobalKey();
+  final GlobalKey _contatoKey = GlobalKey();
+
+  GlobalKey? _currentSection;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    final keys = {
+      _apresentacaoKey: _apresentacaoKey.currentContext?.findRenderObject(),
+      _sobreKey: _sobreKey.currentContext?.findRenderObject(),
+      _tecnologiasKey: _tecnologiasKey.currentContext?.findRenderObject(),
+      _projetosKey: _projetosKey.currentContext?.findRenderObject(),
+      _contatoKey: _contatoKey.currentContext?.findRenderObject(),
+    };
+
+    for (var entry in keys.entries) {
+      if (entry.value != null) {
+        final RenderBox box = entry.value as RenderBox;
+        final position = box.localToGlobal(Offset.zero).dy;
+        if (position >= 0 && position < 300) {
+          setState(() => _currentSection = entry.key);
+          break;
+        }
+      }
+    }
+  }
+  void scrollToSection(GlobalKey sectionKey) {
+    final context = sectionKey.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+      setState(() => _currentSection = sectionKey);
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     var largura = MediaQuery.of(context).size.width ;
@@ -26,15 +77,29 @@ class _InicioState extends State<Inicio> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: Dbar,
-        title: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            "Matheus Lula",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: altura * 0.05 > 30 ? 30 : altura * 0.05,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // FittedBox(
+            //   fit: BoxFit.cover,
+            //   child: Text(
+            //     "Matheus Lula",
+            //     style: TextStyle(
+            //       color: Colors.white,
+            //       fontSize: altura * 0.05 > 30 ? 30 : altura * 0.05,
+            //     ),
+            //   ),
+            // ),
+            Menu(
+              scrollToSection: scrollToSection,
+              currentSection: _currentSection ?? _apresentacaoKey,
+              apresentacaoKey: _apresentacaoKey,
+              sobreKey: _sobreKey,
+              tecnologiasKey: _tecnologiasKey,
+              projetosKey: _projetosKey,
+              contatoKey: _contatoKey,
             ),
-          ),
+          ],
         ),
         flexibleSpace: Container(
           decoration: const BoxDecoration(
@@ -46,17 +111,25 @@ class _InicioState extends State<Inicio> {
         ),
       ),
       body: SingleChildScrollView(
+        controller: _scrollController,
         padding: EdgeInsets.only(top: alturaBarraStatus),
           child: Container(
             padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
             child: Column(
               children: [
-                Apresentacao(),
-                Sobre(),
-                Tecnologias(),
-                Projetos(),
-                Contato(),
-                Direitos(),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    children: [
+                      Container(key: _apresentacaoKey, child: Apresentacao()),
+                      Container(key: _sobreKey, child: Sobre()),
+                      Container(key: _tecnologiasKey, child: Tecnologias()),
+                      Container(key: _projetosKey, child: Projetos()),
+                      Container(key: _contatoKey, child: Contato()),
+                      Direitos(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

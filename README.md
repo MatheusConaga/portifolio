@@ -1,6 +1,7 @@
 # portifolio
 
 Portifolio do Matheus Lula
+Link para acesso do currículo https://matheusconaga.github.io/portifolio/
 
 ## Getting Started
 
