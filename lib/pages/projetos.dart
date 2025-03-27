@@ -46,7 +46,7 @@ class _ProjetosState extends State<Projetos> {
               ),
             ],
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: largura * 0.04),
           Button(title: "Ver todos os trabalhos"),
         ],
       ),

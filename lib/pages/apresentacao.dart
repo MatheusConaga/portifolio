@@ -73,7 +73,7 @@ class _ApresentacaoState extends State<Apresentacao> {
                 ),
               ),
               SizedBox(height: 10,),
-              Button(title: "Currículo CV"),
+              Button(title: "Currículo CV", link: "https://www.canva.com/design/DAGiHbyWMs0/XhE6RPf_7el6Zaut96lmpw/edit?utm_content=DAGiHbyWMs0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",),
             ],
           ),
         ],
