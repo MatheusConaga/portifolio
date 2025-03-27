@@ -10,22 +10,23 @@ class Direitos extends StatelessWidget {
 
     var largura = MediaQuery.of(context).size.width ;
 
-    return Padding(
-      padding: EdgeInsets.only(top: largura * 0.12),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Container(
-            child: Text(
-              "Copyright © 2025. Desenvolvido em Flutter  por Matheus Lula.",
-              style: TextStyle(
-                color: AppColors.white.withOpacity(0.7),
-                fontWeight: FontWeight.bold,
-                fontSize: largura * 0.012,
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.only(top: largura * 0.12),
+        child: Column(
+          children: [
+            Container(
+              child: Text(
+                "Copyright © 2025. Desenvolvido em Flutter  por Matheus Lula.",
+                style: TextStyle(
+                  color: AppColors.white.withOpacity(0.7),
+                  fontWeight: FontWeight.bold,
+                  fontSize: largura * 0.012,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

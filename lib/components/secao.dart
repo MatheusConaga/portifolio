@@ -15,7 +15,7 @@ class Secao extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width ;
 
     return Padding(
-      padding: EdgeInsets.only(top: largura * 0.08, bottom: largura * 0.02,),
+      padding: EdgeInsets.only(top: largura * 0.05, bottom: largura * 0.02,),
       child: Row(
         children: [
           Icon(

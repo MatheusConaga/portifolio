@@ -5,6 +5,7 @@ import 'package:portifolio/pages/contato.dart';
 import 'package:portifolio/pages/direitos.dart';
 import 'package:portifolio/pages/projetos.dart';
 import 'package:portifolio/pages/sobre.dart';
+import 'package:portifolio/pages/tecnologias.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/spacing.dart';
 
@@ -52,6 +53,7 @@ class _InicioState extends State<Inicio> {
               children: [
                 Apresentacao(),
                 Sobre(),
+                Tecnologias(),
                 Projetos(),
                 Contato(),
                 Direitos(),

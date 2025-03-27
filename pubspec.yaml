@@ -35,6 +35,12 @@ flutter:
     - assets/tecno/kotlin.png
     - assets/tecno/linkedin.png
     - assets/tecno/react.png
+    - assets/tecno/firebase.png
+    - assets/tecno/js.png
+    - assets/tecno/mongo.png
+    - assets/tecno/postg.png
+    - assets/tecno/python.png
+    - assets/tecno/ts.png
     - assets/projeto/deltacomerce.png
     - assets/projeto/indisponivel.png
   #   - images/a_dot_ham.jpeg

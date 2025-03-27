@@ -32,6 +32,7 @@ class _ProjectItemState extends State<ProjectItem> {
         }
       },
       child: Container(
+        height: largura * 0.25,
         width: largura * 0.2,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
