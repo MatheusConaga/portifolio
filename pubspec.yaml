@@ -36,6 +36,7 @@ flutter:
     - assets/tecno/linkedin.png
     - assets/tecno/react.png
     - assets/projeto/deltacomerce.png
+    - assets/projeto/indisponivel.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:portifolio/components/button.dart';
 import 'package:portifolio/components/projectItem.dart';
 import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
@@ -19,7 +20,6 @@ class _ProjetosState extends State<Projetos> {
     var largura = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
       child: Column(
         children: [
          Secao(titulo: "Projetos"),
@@ -33,19 +33,21 @@ class _ProjetosState extends State<Projetos> {
                 link: "https://github.com/MatheusConaga/olx_clone",
               ),
               ProjectItem(
-                title: "Delta Comerce",
-                descript: "Sistema de postagem e compra de produtos",
-                image: "assets/projeto/deltacomerce.png",
-                link: "https://github.com/MatheusConaga/olx_clone",
+                title: "Em Breve!",
+                // descript: "Sistema de postagem e compra de produtos",
+                image: "assets/projeto/indisponivel.png",
+                // link: "https://github.com/MatheusConaga/olx_clone",
               ),
               ProjectItem(
-                title: "Delta Comerce",
-                descript: "Sistema de postagem e compra de produtos",
-                image: "assets/projeto/deltacomerce.png",
-                link: "https://github.com/MatheusConaga/olx_clone",
+                title: "Em Breve!",
+                // descript: "Sistema de postagem e compra de produtos",
+                image: "assets/projeto/indisponivel.png",
+                // link: "https://github.com/MatheusConaga/olx_clone",
               ),
             ],
           ),
+          SizedBox(height: 40,),
+          Button(title: "Ver todos os trabalhos"),
         ],
       ),
     );

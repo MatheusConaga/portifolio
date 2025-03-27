@@ -14,7 +14,6 @@ class Sobre extends StatelessWidget {
     var altura = MediaQuery.of(context).size.height;
 
     return Container(
-      padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

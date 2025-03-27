@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portifolio/components/button.dart';
 import 'package:portifolio/pages/apresentacao.dart';
 import 'package:portifolio/pages/contato.dart';
 import 'package:portifolio/pages/direitos.dart';
@@ -45,14 +46,17 @@ class _InicioState extends State<Inicio> {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(top: alturaBarraStatus),
-          child: Column(
-            children: [
-              Apresentacao(),
-              Sobre(),
-              Projetos(),
-              Contato(),
-              Direitos(),
-            ],
+          child: Container(
+            padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
+            child: Column(
+              children: [
+                Apresentacao(),
+                Sobre(),
+                Projetos(),
+                Contato(),
+                Direitos(),
+              ],
+            ),
           ),
       ),
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portifolio/components/button.dart';
 import 'package:portifolio/styles/appColors.dart';
 
 class Apresentacao extends StatefulWidget {
@@ -71,7 +72,8 @@ class _ApresentacaoState extends State<Apresentacao> {
                   fontSize: largura * 0.02,
                 ),
               ),
-
+              SizedBox(height: 10,),
+              Button(title: "Currículo CV"),
             ],
           ),
         ],
