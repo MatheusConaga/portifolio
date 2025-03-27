@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 
 class Direitos extends StatelessWidget {
   const Direitos({super.key});
@@ -9,11 +10,14 @@ class Direitos extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var largura = MediaQuery.of(context).size.width ;
+    double fontSizePequeno = Responsive.isMobile(context) ? 12 : (Responsive.isTablet(context) ? 18 : 20);
+
 
     return Center(
       child: Padding(
         padding: EdgeInsets.only(top: largura * 0.12),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
               child: Text(
@@ -21,8 +25,9 @@ class Direitos extends StatelessWidget {
                 style: TextStyle(
                   color: AppColors.white.withOpacity(0.7),
                   fontWeight: FontWeight.bold,
-                  fontSize: largura * 0.012,
+                  fontSize: fontSizePequeno,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],

@@ -9,6 +9,7 @@ import 'package:portifolio/pages/projetos.dart';
 import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/pages/tecnologias.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 import 'package:portifolio/styles/spacing.dart';
 
 class Inicio extends StatefulWidget {
@@ -74,6 +75,12 @@ class _InicioState extends State<Inicio> {
     var altura = MediaQuery.of(context).size.height;
     var alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
 
+    double Dbordas = Responsive.isDesktop(context)
+        ? 100
+        : Responsive.isTablet(context)
+        ? 20
+        : 30;
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: Dbar,
@@ -116,20 +123,18 @@ class _InicioState extends State<Inicio> {
           child: Container(
             padding: EdgeInsets.only(left: Dbordas, right: Dbordas),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(key: _apresentacaoKey, child: Apresentacao()),
-                      Container(key: _sobreKey, child: Sobre()),
-                      Container(key: _tecnologiasKey, child: Tecnologias()),
-                      Container(key: _projetosKey, child: Projetos()),
-                      Container(key: _contatoKey, child: Contato()),
-                      Direitos(),
-                    ],
-                  ),
+                Column(
+                  children: [
+                    Container(key: _apresentacaoKey, child: Apresentacao()),
+                    Container(key: _sobreKey, child: Sobre()),
+                    Container(key: _tecnologiasKey, child: Tecnologias()),
+                    Container(key: _projetosKey, child: Projetos()),
+                    Container(key: _contatoKey, child: Contato()),
+                  ],
                 ),
+                Direitos(),
               ],
             ),
           ),

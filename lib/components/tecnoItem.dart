@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 
 class TecnoItem extends StatelessWidget {
   final String info;
@@ -15,9 +16,16 @@ class TecnoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var largura = MediaQuery.of(context).size.width;
 
+    double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 25);
+
+    double containerWidth = Responsive.isMobile(context) ? largura * 0.9
+        : (Responsive.isTablet(context) ? largura * 0.35 : largura * 0.2);
+
+    bool isMobile = Responsive.isMobile(context);
+
     return Container(
-      width: largura * 0.2,
-      padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+      width: containerWidth,
+      padding: EdgeInsets.all(fontSizeTitle),
       decoration: BoxDecoration(
         color: AppColors.darkblue.withOpacity(0.8),
         borderRadius: BorderRadius.circular(10),
@@ -29,9 +37,10 @@ class TecnoItem extends StatelessWidget {
             info,
             style: TextStyle(
               color: AppColors.info,
-              fontSize: largura * 0.018,
+              fontSize: fontSizeTitle,
               fontWeight: FontWeight.bold,
             ),
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: largura * 0.012,),
           Column(

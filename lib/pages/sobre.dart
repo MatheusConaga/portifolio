@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 import 'package:portifolio/styles/spacing.dart';
 
 class Sobre extends StatelessWidget {
@@ -13,6 +14,9 @@ class Sobre extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width ;
     var altura = MediaQuery.of(context).size.height;
 
+    double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 25);
+
+
     return Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +24,7 @@ class Sobre extends StatelessWidget {
           children: [
            Secao(titulo: "Sobre mim"),
             Container(
-              padding: EdgeInsets.only(right: 50, left: 50),
+              padding: EdgeInsets.only(right: 10, left: 10),
               child: Text.rich(
                 TextSpan(
                   children: [
@@ -29,14 +33,14 @@ class Sobre extends StatelessWidget {
                           "Possuo uma certa experiência na construção de aplicativos com uso do ",
                       style: TextStyle(
                         color: AppColors.white,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                       ),
                     ),
                     TextSpan(
                       text: "Flutter",
                       style: TextStyle(
                         color: AppColors.info,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -44,14 +48,14 @@ class Sobre extends StatelessWidget {
                       text: " e ",
                       style: TextStyle(
                         color: AppColors.white,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                       ),
                     ),
                     TextSpan(
                       text: "React Native",
                       style: TextStyle(
                         color: AppColors.info,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -59,14 +63,14 @@ class Sobre extends StatelessWidget {
                       text: ", mas sempre busco aprimorar minhas habilidades, explorando também novas tecnologias como o ",
                       style: TextStyle(
                         color: AppColors.white,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                       ),
                     ),
                     TextSpan(
                       text: "Kotlin",
                       style: TextStyle(
                         color: AppColors.info,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -75,7 +79,7 @@ class Sobre extends StatelessWidget {
                           " Seja bem-vindo ao meu portfólio!",
                       style: TextStyle(
                         color: AppColors.white,
-                        fontSize: largura * 0.015,
+                        fontSize: fontSizePequena,
                       ),
                     ),
                   ],

@@ -3,6 +3,7 @@ import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/components/tecno.dart';
 import 'package:portifolio/components/tecnoItem.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 
 class Tecnologias extends StatelessWidget {
   const Tecnologias({super.key});
@@ -11,6 +12,7 @@ class Tecnologias extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var largura = MediaQuery.of(context).size.width;
+    bool isMobile = Responsive.isMobile(context);
 
     return Container(
       child: Column(
