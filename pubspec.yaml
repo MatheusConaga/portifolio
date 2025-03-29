@@ -14,10 +14,20 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   url_launcher: ^6.1.14
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo_lula.png"
+  adaptive_icon_background: "#080322"
+  adaptive_icon_foreground: "assets/images/logo_lula.png"
+  name: "Portifolio"
 
   flutter_lints: ^4.0.0
 
@@ -29,6 +39,8 @@ flutter:
     - assets/images/barcolor.png
     - assets/images/fundo.jpg
     - assets/images/perfil_port.png
+    - assets/images/logo_lula.png
+    - assets/images/logo_lula.svg
     - assets/tecno/email.png
     - assets/tecno/flutter.png
     - assets/tecno/github.png

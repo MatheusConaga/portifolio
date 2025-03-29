@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/components/button.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/responsive.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Apresentacao extends StatefulWidget {
   const Apresentacao({super.key});
@@ -16,7 +17,6 @@ class _ApresentacaoState extends State<Apresentacao> {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
 
-    // Definição de tamanhos ajustáveis
     double imageSize = Responsive.isMobile(context)
         ? largura * 0.4
         : Responsive.isTablet(context)

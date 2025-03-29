@@ -11,6 +11,7 @@ import 'package:portifolio/pages/tecnologias.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/responsive.dart';
 import 'package:portifolio/styles/spacing.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Inicio extends StatefulWidget {
   const Inicio({super.key});
@@ -75,6 +76,12 @@ class _InicioState extends State<Inicio> {
     var altura = MediaQuery.of(context).size.height;
     var alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
 
+    double imageSize = Responsive.isMobile(context)
+        ? largura * 0.3
+        : Responsive.isTablet(context)
+        ? largura * 0.1
+        : largura * 0.1;
+
     double Dbordas = Responsive.isDesktop(context)
         ? 100
         : Responsive.isTablet(context)
@@ -87,16 +94,36 @@ class _InicioState extends State<Inicio> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // FittedBox(
-            //   fit: BoxFit.cover,
-            //   child: Text(
-            //     "Matheus Lula",
-            //     style: TextStyle(
-            //       color: Colors.white,
-            //       fontSize: altura * 0.05 > 30 ? 30 : altura * 0.05,
-            //     ),
-            //   ),
-            // ),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             children: [
+               Container(
+                 width: 100,
+                 height: 100,
+                 decoration: BoxDecoration(
+                   shape: BoxShape.circle,
+                   border: Border.all(color: Colors.white, width: imageSize * 0.02,),
+                 ),
+                 child: ClipOval(
+                   child: SvgPicture.asset(
+                     "assets/images/logo_lula.svg",
+                     fit: BoxFit.cover,
+                   ),
+                 ),
+               ),
+               // Text(
+               //   "Lula",
+               //   style: TextStyle(
+               //     color: AppColors.white,
+               //     fontWeight: FontWeight.bold,
+               //     fontSize: 20,
+               //   ),
+               // ),
+             ],
+           ),
+            SizedBox(
+              width: 20,
+            ),
             Menu(
               scrollToSection: scrollToSection,
               currentSection: _currentSection ?? _apresentacaoKey,
