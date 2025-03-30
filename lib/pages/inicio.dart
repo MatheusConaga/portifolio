@@ -76,11 +76,13 @@ class _InicioState extends State<Inicio> {
     var altura = MediaQuery.of(context).size.height;
     var alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
 
+    double fontSizeGrande = Responsive.isMobile(context) ? 22 : (Responsive.isTablet(context) ? 24 : 30);
+
     double imageSize = Responsive.isMobile(context)
-        ? largura * 0.3
+        ? largura * 0.2
         : Responsive.isTablet(context)
         ? largura * 0.1
-        : largura * 0.1;
+        : largura * 0.07;
 
     double Dbordas = Responsive.isDesktop(context)
         ? 100
@@ -92,39 +94,54 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         toolbarHeight: Dbar,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Container(
-                 width: 100,
-                 height: 100,
-                 decoration: BoxDecoration(
-                   shape: BoxShape.circle,
-                   border: Border.all(color: Colors.white, width: imageSize * 0.02,),
-                 ),
-                 child: ClipOval(
-                   child: SvgPicture.asset(
-                     "assets/images/logo_lula.svg",
-                     fit: BoxFit.cover,
-                   ),
-                 ),
-               ),
-               // Text(
-               //   "Lula",
-               //   style: TextStyle(
-               //     color: AppColors.white,
-               //     fontWeight: FontWeight.bold,
-               //     fontSize: 20,
-               //   ),
-               // ),
-             ],
-           ),
-            SizedBox(
-              width: 20,
+            GestureDetector(
+              child: Row(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Matheus",
+                  style: TextStyle(
+                    color: AppColors.white,
+                    fontSize: fontSizeGrande,
+                    fontFamily: 'JockeyOne',
+                  ),
+                ),
+                Text(
+                  "Lula",
+                  style: TextStyle(
+                    color: AppColors.white,
+                    fontSize: fontSizeGrande,
+                    fontFamily: 'JockeyOne',
+                  ),
+                ),
+              ],
             ),
-            Menu(
+            SizedBox(width: 10,),
+            Container(
+              width: imageSize,
+              height: imageSize,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: imageSize * 0.02,),
+              ),
+              child: ClipOval(
+                child: SvgPicture.asset(
+                  "assets/images/logo_lula.svg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+
+          ],
+        ),
+              onTap: () => scrollToSection(_apresentacaoKey),
+            ),
+            Expanded(
+              child: Menu(
               scrollToSection: scrollToSection,
               currentSection: _currentSection ?? _apresentacaoKey,
               apresentacaoKey: _apresentacaoKey,
@@ -132,6 +149,7 @@ class _InicioState extends State<Inicio> {
               tecnologiasKey: _tecnologiasKey,
               projetosKey: _projetosKey,
               contatoKey: _contatoKey,
+            ),
             ),
           ],
         ),

@@ -81,8 +81,8 @@ class _ApresentacaoState extends State<Apresentacao> {
             "Matheus Lula",
             style: TextStyle(
               color: AppColors.info,
-              fontWeight: FontWeight.bold,
               fontSize: fontSizeGrande,
+              fontFamily: 'JockeyOne',
             ),
           ),
           Container(

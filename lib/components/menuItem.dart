@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portifolio/styles/appColors.dart';
+import 'package:portifolio/styles/responsive.dart';
 
 class MenuItem extends StatefulWidget {
   final String title;
@@ -22,6 +23,14 @@ class _MenuItemState extends State<MenuItem> {
 
   @override
   Widget build(BuildContext context) {
+
+    double fontMenu = Responsive.isMobile(context)
+        ? 12
+        : Responsive.isTablet(context)
+        ? 16
+        : 20;
+
+
     Widget item = MouseRegion(
       onEnter: (_) => setState(() => isHovered = true),
       onExit: (_) => setState(() => isHovered = false),
@@ -42,7 +51,7 @@ class _MenuItemState extends State<MenuItem> {
             widget.title,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 20,
+              fontSize: fontMenu,
               fontWeight: FontWeight.bold,
             ),
           ),

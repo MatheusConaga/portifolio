@@ -14,7 +14,7 @@ class Sobre extends StatelessWidget {
     var largura = MediaQuery.of(context).size.width ;
     var altura = MediaQuery.of(context).size.height;
 
-    double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 25);
+    double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 18 : 22);
 
 
     return Container(

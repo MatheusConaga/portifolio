@@ -32,7 +32,7 @@ class Secao extends StatelessWidget {
             style: TextStyle(
               color: AppColors.info,
               fontSize: fontSizeGrande,
-              fontWeight: FontWeight.bold,
+              fontFamily: 'JockeyOne',
             ),
           ),
         ],
