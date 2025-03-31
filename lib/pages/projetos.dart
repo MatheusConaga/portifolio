@@ -4,7 +4,6 @@ import 'package:portifolio/components/button.dart';
 import 'package:portifolio/components/projectItem.dart';
 import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
-import 'package:portifolio/styles/spacing.dart';
 
 class Projetos extends StatefulWidget {
   const Projetos({super.key});
@@ -19,12 +18,14 @@ class _ProjetosState extends State<Projetos> {
 
     var largura = MediaQuery.of(context).size.width;
 
-    return Container(
-      child: Column(
-        children: [
-         Secao(titulo: "Projetos"),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
+      children: [
+        Secao(titulo: "Projetos"),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          child: Wrap(
+            alignment: WrapAlignment.spaceEvenly,
+            runSpacing: 10,
             children: [
               ProjectItem(
                 title: "Delta Comerce",
@@ -46,10 +47,10 @@ class _ProjetosState extends State<Projetos> {
               ),
             ],
           ),
-          SizedBox(height: largura * 0.04),
-          Button(title: "Ver todos os trabalhos"),
-        ],
-      ),
+        ),
+        SizedBox(height: largura * 0.04),
+        Button(title: "Ver todos os trabalhos"),
+      ],
     );
   }
 }

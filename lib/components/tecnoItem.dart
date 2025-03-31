@@ -18,8 +18,8 @@ class TecnoItem extends StatelessWidget {
 
     double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 25);
 
-    double containerWidth = Responsive.isMobile(context) ? largura * 0.9
-        : (Responsive.isTablet(context) ? largura * 0.30 : largura * 0.25);
+    double containerWidth = Responsive.isMobile(context) ? 250
+        : (Responsive.isTablet(context) ? 300 : 400);
 
     bool isMobile = Responsive.isMobile(context);
 

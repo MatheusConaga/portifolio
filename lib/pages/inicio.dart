@@ -10,7 +10,7 @@ import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/pages/tecnologias.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/responsive.dart';
-import 'package:portifolio/styles/spacing.dart';
+// import 'package:portifolio/styles/spacing.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Inicio extends StatefulWidget {
@@ -79,9 +79,9 @@ class _InicioState extends State<Inicio> {
     double fontSizeGrande = Responsive.isMobile(context) ? 22 : (Responsive.isTablet(context) ? 24 : 30);
 
     double imageSize = Responsive.isMobile(context)
-        ? largura * 0.2
+        ? largura * 0.14
         : Responsive.isTablet(context)
-        ? largura * 0.1
+        ? largura * 0.08
         : largura * 0.07;
 
     double Dbordas = Responsive.isDesktop(context)
@@ -89,6 +89,12 @@ class _InicioState extends State<Inicio> {
         : Responsive.isTablet(context)
         ? 20
         : 30;
+
+    double Dbar = Responsive.isDesktop(context)
+        ? 120
+        : Responsive.isTablet(context)
+        ? 80
+        : 90;
 
     return Scaffold(
       appBar: AppBar(

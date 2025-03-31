@@ -26,11 +26,13 @@ class _ButtonState extends State<Button> {
   Widget build(BuildContext context) {
 
     double fontSizePequeno = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 16 : 20);
+    double padAll = Responsive.isMobile(context) ? 15 : (Responsive.isTablet(context) ? 18 : 20);
+
 
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.blue,
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(padAll),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         foregroundColor: AppColors.darkblue,
       ),

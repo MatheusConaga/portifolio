@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:portifolio/components/secao.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/responsive.dart';
-import 'package:portifolio/styles/spacing.dart';
 
 class Sobre extends StatelessWidget {
   const Sobre({super.key});

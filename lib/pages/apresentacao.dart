@@ -17,12 +17,12 @@ class _ApresentacaoState extends State<Apresentacao> {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
 
+
     double imageSize = Responsive.isMobile(context)
         ? largura * 0.4
         : Responsive.isTablet(context)
         ? largura * 0.3
         : largura * 0.2;
-
     double fontSizePequeno = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 20 : 30);
     double fontSizeGrande = Responsive.isMobile(context) ? 22 : (Responsive.isTablet(context) ? 30 : 40);
 
