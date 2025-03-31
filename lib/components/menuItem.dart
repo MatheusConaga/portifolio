@@ -43,7 +43,7 @@ class _MenuItemState extends State<MenuItem> {
             color: widget.isActive
                 ? AppColors.blue
                 : isHovered
-                ? AppColors.shadowblue.withOpacity(0.1)
+                ? AppColors.shadowblue.withOpacity(0.3)
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(5),
           ),

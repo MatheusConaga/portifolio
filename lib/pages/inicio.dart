@@ -10,7 +10,6 @@ import 'package:portifolio/pages/sobre.dart';
 import 'package:portifolio/pages/tecnologias.dart';
 import 'package:portifolio/styles/appColors.dart';
 import 'package:portifolio/styles/responsive.dart';
-// import 'package:portifolio/styles/spacing.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Inicio extends StatefulWidget {
@@ -96,6 +95,7 @@ class _InicioState extends State<Inicio> {
         ? 80
         : 90;
 
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: Dbar,
@@ -128,8 +128,6 @@ class _InicioState extends State<Inicio> {
             ),
             SizedBox(width: 10,),
             Container(
-              width: imageSize,
-              height: imageSize,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.white, width: imageSize * 0.02,),
@@ -137,11 +135,12 @@ class _InicioState extends State<Inicio> {
               child: ClipOval(
                 child: SvgPicture.asset(
                   "assets/images/logo_lula.svg",
+                  width: imageSize,
+                  height: imageSize,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-
           ],
         ),
               onTap: () => scrollToSection(_apresentacaoKey),

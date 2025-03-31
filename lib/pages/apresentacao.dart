@@ -58,7 +58,7 @@ class _ApresentacaoState extends State<Apresentacao> {
               color: Colors.white,
               width: imageSize * 0.02,
             ),
-            image: const DecorationImage(
+            image: DecorationImage(
               image: AssetImage("assets/images/perfil_port.png"),
               fit: BoxFit.cover,
             ),

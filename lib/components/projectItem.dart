@@ -30,18 +30,19 @@ class _ProjectItemState extends State<ProjectItem> {
 
     double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 25);
 
-    double containerWidth = Responsive.isMobile(context) ? largura * 0.35
-        : (Responsive.isTablet(context) ? largura * 0.35 : largura * 0.22);
+    int itemsPerRow = Responsive.isMobile(context) ? 1
+        : (Responsive.isTablet(context) ? 2 : 3);
 
-    double containerHeight = Responsive.isMobile(context) ? altura * 0.35
-        : (Responsive.isTablet(context) ? altura * 0.4 : altura * 0.5);
+    double containerWidth = (largura / itemsPerRow) * 0.7;
+
+    double containerHeight = Responsive.isMobile(context) ? containerWidth * 0.6 : (Responsive.isTablet(context) ? containerWidth * 1.2 : containerWidth * 1.25);
 
     double borda = Responsive.isMobile(context) ? 5
         : (Responsive.isTablet(context) ? 10 : 20);
 
-    double fontTitle = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 25);
+    double fontTitle = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 22);
 
-    double fontDescript = Responsive.isMobile(context) ? 10 : (Responsive.isTablet(context) ? 16 : 20);
+    double fontDescript = Responsive.isMobile(context) ? 10 : (Responsive.isTablet(context) ? 16 : 18);
 
     double imageSize = Responsive.isMobile(context)
         ? largura * 0.2

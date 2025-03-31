@@ -19,16 +19,19 @@ class _ContatoState extends State<Contato> {
     var largura = MediaQuery.of(context).size.width ;
     var altura = MediaQuery.of(context).size.height;
 
-    double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 25);
+    double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 18 : 20);
 
     double containerWidth = Responsive.isMobile(context) ? largura
-        : (Responsive.isTablet(context) ? largura * 0.6 : largura * 0.5);
+        : (Responsive.isTablet(context) ? largura * 0.6 : largura * 0.45);
 
     double borda = Responsive.isMobile(context) ? 5
         : (Responsive.isTablet(context) ? 10 : 20);
 
+    double pad = Responsive.isMobile(context) ? 10
+        : (Responsive.isTablet(context) ? 10 : 15);
+
     double imageSize = Responsive.isMobile(context)
-        ? largura * 0.06
+        ? largura * 0.08
         : Responsive.isTablet(context)
         ? largura * 0.05
         : largura * 0.04;
@@ -51,7 +54,7 @@ class _ContatoState extends State<Contato> {
                 ),
               ],
             ),
-            padding: EdgeInsets.all(largura * 0.02),
+            padding: EdgeInsets.all(pad),
             child: Column(
               children: [
                 Padding(
@@ -76,13 +79,12 @@ class _ContatoState extends State<Contato> {
                               width: imageSize
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(left: 30),
                             child: Text(
                               "matheusphillip170@gmail.com",
                               style: TextStyle(
                                 color: AppColors.white,
                                 fontSize: fontSizePequena,
-                                // decoration: TextDecoration.underline,
                               ),
                             ),
                           ),
