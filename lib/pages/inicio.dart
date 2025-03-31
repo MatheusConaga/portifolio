@@ -133,8 +133,8 @@ class _InicioState extends State<Inicio> {
                 border: Border.all(color: Colors.white, width: imageSize * 0.02,),
               ),
               child: ClipOval(
-                child: SvgPicture.asset(
-                  "assets/images/logo_lula.svg",
+                child: Image.asset(
+                  "assets/images/logo_lula.png",
                   width: imageSize,
                   height: imageSize,
                   fit: BoxFit.cover,
