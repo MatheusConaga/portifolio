@@ -16,24 +16,22 @@ class TecnoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var largura = MediaQuery.of(context).size.width;
 
-    double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 25);
+    double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 20);
 
     int itemsPerRow = Responsive.isMobile(context) ? 1
         : (Responsive.isTablet(context) ? 2 : 3);
 
     double containerWidth = (largura / itemsPerRow) * 0.8;
 
-    bool isMobile = Responsive.isMobile(context);
-
     return Container(
       width: containerWidth,
-      padding: EdgeInsets.all(fontSizeTitle),
+      padding: EdgeInsets.fromLTRB(fontSizeTitle * 2, fontSizeTitle, fontSizeTitle * 1.5, fontSizeTitle),
       decoration: BoxDecoration(
         color: AppColors.darkblue.withOpacity(0.8),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             info,
@@ -42,9 +40,9 @@ class TecnoItem extends StatelessWidget {
               fontSize: fontSizeTitle,
               fontWeight: FontWeight.bold,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.left,
           ),
-          SizedBox(height: largura * 0.012,),
+          SizedBox(height: largura * 0.012),
           Column(
             children: children,
           ),
@@ -53,3 +51,4 @@ class TecnoItem extends StatelessWidget {
     );
   }
 }
+

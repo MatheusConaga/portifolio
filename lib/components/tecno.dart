@@ -19,23 +19,27 @@ class Tecno extends StatelessWidget {
 
     double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 20 : 25);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          image,
-          width: fontSizePequena,
-        ),
-        SizedBox(width: 10,),
-        Text(
-          title,
-          style: TextStyle(
-            color: AppColors.white,
-            fontSize: fontSizePequena,
-            fontWeight: FontWeight.bold,
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.asset(
+            image,
+            width: fontSizePequena,
           ),
-        ),
-      ],
+          SizedBox(
+            width: 10,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+              color: AppColors.white,
+              fontSize: fontSizePequena,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
