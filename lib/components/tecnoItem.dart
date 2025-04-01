@@ -16,7 +16,7 @@ class TecnoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var largura = MediaQuery.of(context).size.width;
 
-    double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 20);
+    double fontSizeTitle = Responsive.isMobile(context) ? 16 : (Responsive.isTablet(context) ? 22 : 23);
 
     int itemsPerRow = Responsive.isMobile(context) ? 1
         : (Responsive.isTablet(context) ? 2 : 3);
@@ -25,7 +25,7 @@ class TecnoItem extends StatelessWidget {
 
     return Container(
       width: containerWidth,
-      padding: EdgeInsets.fromLTRB(fontSizeTitle * 2, fontSizeTitle, fontSizeTitle * 1.5, fontSizeTitle),
+      padding: EdgeInsets.fromLTRB(fontSizeTitle * 1.5, fontSizeTitle, fontSizeTitle * 1.5, fontSizeTitle),
       decoration: BoxDecoration(
         color: AppColors.darkblue.withOpacity(0.8),
         borderRadius: BorderRadius.circular(10),
@@ -40,7 +40,7 @@ class TecnoItem extends StatelessWidget {
               fontSize: fontSizeTitle,
               fontWeight: FontWeight.bold,
             ),
-            textAlign: TextAlign.left,
+            textAlign: TextAlign.center,
           ),
           SizedBox(height: largura * 0.012),
           Column(

@@ -35,13 +35,11 @@ class _ProjetosState extends State<Projetos> {
               ),
               ProjectItem(
                 title: "Em Breve!",
-                // descript: "Sistema de postagem e compra de produtos",
                 image: "assets/projeto/indisponivel.png",
                 // link: "https://github.com/MatheusConaga/olx_clone",
               ),
               ProjectItem(
                 title: "Em Breve!",
-                // descript: "Sistema de postagem e compra de produtos",
                 image: "assets/projeto/indisponivel.png",
                 // link: "https://github.com/MatheusConaga/olx_clone",
               ),

@@ -14,6 +14,10 @@ class Tecnologias extends StatelessWidget {
 
     bool isMobile = Responsive.isMobile(context);
 
+    double containerWidth = Responsive.isMobile(context) ? largura * 0.4
+        : (Responsive.isTablet(context) ? largura * 0.6 : largura * 0.17);
+
+
     return Column(
       children: [
         Secao(titulo: "Tecnologias"),
@@ -26,70 +30,91 @@ class Tecnologias extends StatelessWidget {
               TecnoItem(
                 info: "Front-End",
                 children: [
-                  Tecno(
-                    title: "Flutter",
-                    image: "assets/tecno/flutter.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "React Native",
-                    image: "assets/tecno/react.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "Kotlin",
-                    image: "assets/tecno/kotlin.png",
+                  Container(
+                    width: containerWidth,
+                    child: Column(
+                      children: [
+                        Tecno(
+                          title: "Flutter",
+                          image: "assets/tecno/flutter.png",
+                        ),
+                        SizedBox(
+                          height: largura * 0.015,
+                        ),
+                        Tecno(
+                          title: "React Native",
+                          image: "assets/tecno/react.png",
+                        ),
+                        SizedBox(
+                          height: largura * 0.015,
+                        ),
+                        Tecno(
+                          title: "Kotlin",
+                          image: "assets/tecno/kotlin.png",
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               TecnoItem(
                 info: "Back-End",
                 children: [
-                  Tecno(
-                    title: "JavaScript",
-                    image: "assets/tecno/js.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "Typescript",
-                    image: "assets/tecno/ts.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "Python",
-                    image: "assets/tecno/python.png",
+                  Container(
+                    width: containerWidth,
+                    child: Column(
+                      children: [
+                        Tecno(
+                          title: "JavaScript",
+                          image: "assets/tecno/js.png",
+                        ),
+                        SizedBox(
+                          height: largura * 0.015,
+                        ),
+                        Tecno(
+                          title: "Typescript",
+                          image: "assets/tecno/ts.png",
+                        ),
+                        SizedBox(
+                          height: largura * 0.015,
+                        ),
+                        Tecno(
+                          title: "Python",
+                          image: "assets/tecno/python.png",
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               TecnoItem(
                 info: "Banco de Dados",
                 children: [
-                  Tecno(
-                    title: "Firebase",
-                    image: "assets/tecno/firebase.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "MongoDB",
-                    image: "assets/tecno/mongo.png",
-                  ),
-                  SizedBox(
-                    height: largura * 0.015,
-                  ),
-                  Tecno(
-                    title: "Postgress",
-                    image: "assets/tecno/postg.png",
-                  ),
+                 Container(
+                   width: containerWidth,
+                   child: Column(
+                     children: [
+                       Tecno(
+                         title: "Firebase",
+                         image: "assets/tecno/firebase.png",
+                       ),
+                       SizedBox(
+                         height: largura * 0.015,
+                       ),
+                       Tecno(
+                         title: "MongoDB",
+                         image: "assets/tecno/mongo.png",
+                       ),
+                       SizedBox(
+                         height: largura * 0.015,
+                       ),
+                       Tecno(
+                         title: "Postgress",
+                         image: "assets/tecno/postg.png",
+                       ),
+                     ],
+                   ),
+                 ),
                 ],
               ),
             ],

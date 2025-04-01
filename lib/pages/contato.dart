@@ -63,20 +63,35 @@ class _ContatoState extends State<Contato> {
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () async {
-                          final Uri emailUri = Uri.parse(
-                              "https://mail.google.com/mail/?view=cm&fs=1&to=matheusphillip170@gmail.com&su=Contato%20via%20Portfólio");
-                          if (await canLaunchUrl(emailUri)) {
-                            await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+                          if (Responsive.isMobile(context)) {
+                            final Uri emailUri = Uri(
+                              scheme: 'mailto',
+                              path: 'matheusphillip170@gmail.com',
+                              queryParameters: {'subject': 'Contato via Portfólio'},
+                            );
+
+                            if (await canLaunchUrl(emailUri)) {
+                              await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+                            } else {
+                              print("Não foi possível abrir o aplicativo de e-mail");
+                            }
                           } else {
-                            print("Não foi possível abrir o Gmail");
+                            final Uri emailUri = Uri.parse(
+                                "https://mail.google.com/mail/?view=cm&fs=1&to=matheusphillip170@gmail.com&su=Contato%20via%20Portfólio");
+
+                            if (await canLaunchUrl(emailUri)) {
+                              await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+                            } else {
+                              print("Não foi possível abrir o Gmail");
+                            }
                           }
                         },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
-                                "assets/tecno/email.png",
-                                width: imageSize
+                              "assets/tecno/email.png",
+                              width: imageSize,
                             ),
                             Padding(
                               padding: EdgeInsets.only(left: pad),
@@ -117,6 +132,19 @@ class _ContatoState extends State<Contato> {
                           },
                           child: Image.asset(
                             "assets/tecno/linkedin.png",
+                            width: imageSize,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: pad),
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () async{
+                            await launchUrl(Uri.parse("https://www.instagram.com/lula.dev?igsh=Z29oYm1pNDVidnp6"), mode: LaunchMode.externalApplication);
+                          },
+                          child: Image.asset(
+                            "assets/tecno/insta.png",
                             width: imageSize,
                           ),
                         ),

@@ -42,6 +42,7 @@ flutter:
     - assets/images/logo_lula.png
     - assets/images/logo_lula.svg
     - assets/tecno/email.png
+    - assets/tecno/insta.png
     - assets/tecno/flutter.png
     - assets/tecno/github.png
     - assets/tecno/kotlin.png
