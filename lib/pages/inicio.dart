@@ -38,24 +38,39 @@ class _InicioState extends State<Inicio> {
 
   void _onScroll() {
     final keys = {
-      _apresentacaoKey: _apresentacaoKey.currentContext?.findRenderObject(),
-      _sobreKey: _sobreKey.currentContext?.findRenderObject(),
-      _tecnologiasKey: _tecnologiasKey.currentContext?.findRenderObject(),
-      _projetosKey: _projetosKey.currentContext?.findRenderObject(),
-      _contatoKey: _contatoKey.currentContext?.findRenderObject(),
+      _apresentacaoKey: _apresentacaoKey.currentContext?.findRenderObject() as RenderBox?,
+      _sobreKey: _sobreKey.currentContext?.findRenderObject() as RenderBox?,
+      _tecnologiasKey: _tecnologiasKey.currentContext?.findRenderObject() as RenderBox?,
+      _projetosKey: _projetosKey.currentContext?.findRenderObject() as RenderBox?,
+      _contatoKey: _contatoKey.currentContext?.findRenderObject() as RenderBox?,
     };
+
+    double viewportHeight = MediaQuery.of(context).size.height;
+    double centerScreen = viewportHeight / 2;
+
+    GlobalKey? bestMatch;
+    double minDistance = double.infinity;
 
     for (var entry in keys.entries) {
       if (entry.value != null) {
-        final RenderBox box = entry.value as RenderBox;
-        final position = box.localToGlobal(Offset.zero).dy;
-        if (position >= 0 && position < 300) {
-          setState(() => _currentSection = entry.key);
-          break;
+        final position = entry.value!.localToGlobal(Offset.zero).dy;
+        final centerOffset = position + (entry.value!.size.height / 2);
+        final distance = (centerOffset - centerScreen).abs();
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          bestMatch = entry.key;
         }
       }
     }
+
+    if (bestMatch != null && _currentSection != bestMatch) {
+      setState(() {
+        _currentSection = bestMatch;
+      });
+    }
   }
+
   void scrollToSection(GlobalKey sectionKey) {
     final context = sectionKey.currentContext;
     if (context != null) {
@@ -67,7 +82,6 @@ class _InicioState extends State<Inicio> {
       setState(() => _currentSection = sectionKey);
     }
   }
-
 
   @override
   Widget build(BuildContext context) {

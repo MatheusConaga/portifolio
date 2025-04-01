@@ -5,8 +5,6 @@ import 'package:portifolio/styles/appColors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portifolio/styles/responsive.dart';
 
-
-
 class Menu extends StatelessWidget {
   const Menu({
     required this.scrollToSection,
@@ -29,8 +27,7 @@ class Menu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    var largura = MediaQuery.of(context).size.width ;
+    var largura = MediaQuery.of(context).size.width;
 
     double imageSize = Responsive.isMobile(context)
         ? largura * 0.3
@@ -44,83 +41,116 @@ class Menu extends StatelessWidget {
         ? 430
         : 500;
 
-
     return Row(
-      mainAxisAlignment: Responsive.isMobile(context) ? MainAxisAlignment.end : MainAxisAlignment.center,
-    children: [
-      Responsive.isMobile(context) ?
-      PopupMenuButton<String>(
+      mainAxisAlignment: Responsive.isMobile(context)
+          ? MainAxisAlignment.end
+          : MainAxisAlignment.center,
+      children: [
+        Responsive.isMobile(context)
+            ? PopupMenuButton<String>(
+          color: AppColors.darkblue.withOpacity(0.7),
           icon: Icon(
             Icons.menu,
             color: AppColors.white,
             size: 35,
           ),
-        onSelected: (String value){
-          switch (value) {
-            case 'Início':
-              scrollToSection(apresentacaoKey);
-              break;
-            case 'Sobre':
-              scrollToSection(sobreKey);
-              break;
-            case 'Tecnologias':
-              scrollToSection(tecnologiasKey);
-              break;
-            case 'Projetos':
-              scrollToSection(projetosKey);
-              break;
-            case 'Contato':
-              scrollToSection(contatoKey);
-              break;
-          }
-        },
-        itemBuilder: (BuildContext context) => [
-          PopupMenuItem(value: "Início", child: Text("Início")),
-          PopupMenuItem(value: "Sobre", child: Text("Sobre")),
-          PopupMenuItem(value: "Tecnologias", child: Text("Tecnologias")),
-          PopupMenuItem(value: "Projetos", child: Text("Projetos")),
-          PopupMenuItem(value: "Contato", child: Text("Contato")),
-        ],
-      )
-       : Container(
-        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-        width: sizeContainer,
-        decoration: BoxDecoration(
-          color: AppColors.blue.withOpacity(0.2),
-          borderRadius: BorderRadius.circular(15),
+          onSelected: (String value) {
+            switch (value) {
+              case 'Início':
+                scrollToSection(apresentacaoKey);
+                break;
+              case 'Sobre':
+                scrollToSection(sobreKey);
+                break;
+              case 'Tecnologias':
+                scrollToSection(tecnologiasKey);
+                break;
+              case 'Projetos':
+                scrollToSection(projetosKey);
+                break;
+              case 'Contato':
+                scrollToSection(contatoKey);
+                break;
+            }
+          },
+          itemBuilder: (BuildContext context) => [
+            _buildPopupMenuItem("Início", apresentacaoKey),
+            _buildPopupMenuItem("Sobre", sobreKey),
+            _buildPopupMenuItem("Tecnologias", tecnologiasKey),
+            _buildPopupMenuItem("Projetos", projetosKey),
+            _buildPopupMenuItem("Contato", contatoKey),
+          ],
+        )
+            : Container(
+          padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+          width: sizeContainer,
+          decoration: BoxDecoration(
+            color: AppColors.blue.withOpacity(0.2),
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              MenuItem(
+                title: "Início",
+                func: () => scrollToSection(apresentacaoKey),
+                isActive: currentSection == apresentacaoKey,
+              ),
+              MenuItem(
+                title: "Sobre",
+                func: () => scrollToSection(sobreKey),
+                isActive: currentSection == sobreKey,
+              ),
+              MenuItem(
+                title: "Tecnologias",
+                func: () => scrollToSection(tecnologiasKey),
+                isActive: currentSection == tecnologiasKey,
+              ),
+              MenuItem(
+                title: "Projetos",
+                func: () => scrollToSection(projetosKey),
+                isActive: currentSection == projetosKey,
+              ),
+              MenuItem(
+                title: "Contato",
+                func: () => scrollToSection(contatoKey),
+                isActive: currentSection == contatoKey,
+              ),
+            ],
+          ),
         ),
-        child: Row(
+      ],
+    );
+  }
+  PopupMenuItem<String> _buildPopupMenuItem(String title, GlobalKey sectionKey) {
+    return PopupMenuItem(
+      value: title,
+      child: Container(
+        padding: EdgeInsets.only(left: 2,right: 2),
+        width: double.infinity, 
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            MenuItem(
-              title: "Início",
-              func: () => scrollToSection(apresentacaoKey),
-              isActive: currentSection == apresentacaoKey,
+            Text(
+              title,
+              style: TextStyle(
+                color: AppColors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
             ),
-            MenuItem(
-              title: "Sobre",
-              func: () => scrollToSection(sobreKey),
-              isActive: currentSection == sobreKey,
-            ),
-            MenuItem(
-              title: "Tecnologias",
-              func: () => scrollToSection(tecnologiasKey),
-              isActive: currentSection == tecnologiasKey,
-            ),
-            MenuItem(
-              title: "Projetos",
-              func: () => scrollToSection(projetosKey),
-              isActive: currentSection == projetosKey,
-            ),
-            MenuItem(
-              title: "Contato",
-              func: () => scrollToSection(contatoKey),
-              isActive: currentSection == contatoKey,
-            ),
+            if (currentSection == sectionKey)
+              Container(
+                margin: EdgeInsets.only(top: 4),
+                height: 3,
+                width: double.infinity,
+                color: AppColors.info,
+              ),
           ],
         ),
       ),
-    ],
     );
   }
+
 }

@@ -35,7 +35,7 @@ class _ProjectItemState extends State<ProjectItem> {
 
     double containerWidth = (largura / itemsPerRow) * 0.7;
 
-    double containerHeight = Responsive.isMobile(context) ? containerWidth * 0.6 : (Responsive.isTablet(context) ? containerWidth * 1.2 : containerWidth * 1.25);
+    double containerHeight = Responsive.isMobile(context) ? containerWidth * 0.6 : (Responsive.isTablet(context) ? containerWidth * 1.1 : containerWidth * 1.25);
 
     double borda = Responsive.isMobile(context) ? 5
         : (Responsive.isTablet(context) ? 10 : 20);

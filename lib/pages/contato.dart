@@ -17,7 +17,6 @@ class _ContatoState extends State<Contato> {
   Widget build(BuildContext context) {
 
     var largura = MediaQuery.of(context).size.width ;
-    var altura = MediaQuery.of(context).size.height;
 
     double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 18 : 20);
 
@@ -27,8 +26,8 @@ class _ContatoState extends State<Contato> {
     double borda = Responsive.isMobile(context) ? 5
         : (Responsive.isTablet(context) ? 10 : 20);
 
-    double pad = Responsive.isMobile(context) ? 10
-        : (Responsive.isTablet(context) ? 10 : 15);
+    double pad = Responsive.isMobile(context) ? 20
+        : (Responsive.isTablet(context) ? 20 : 15);
 
     double imageSize = Responsive.isMobile(context)
         ? largura * 0.08
@@ -41,89 +40,91 @@ class _ContatoState extends State<Contato> {
       child: Column(
         children: [
           Secao(titulo: "Contato"),
-          Container(
-            width: containerWidth,
-            decoration: BoxDecoration(
-              color: AppColors.darkblue.withOpacity(0.9),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.shadowblue.withOpacity(0.8),
-                  spreadRadius: 2,
-                  offset: Offset(borda, borda * 0.5),
-                ),
-              ],
-            ),
-            padding: EdgeInsets.all(pad),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 30),
-                  child: MouseRegion(
-                    cursor: SystemMouseCursors.click,
-                    child: GestureDetector(
-                      onTap: () async {
-                        final Uri emailUri = Uri.parse(
-                            "https://mail.google.com/mail/?view=cm&fs=1&to=matheusphillip170@gmail.com&su=Contato%20via%20Portfólio");
-                        if (await canLaunchUrl(emailUri)) {
-                          await launchUrl(emailUri, mode: LaunchMode.externalApplication);
-                        } else {
-                          print("Não foi possível abrir o Gmail");
-                        }
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                              "assets/tecno/email.png",
-                              width: imageSize
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 30),
-                            child: Text(
-                              "matheusphillip170@gmail.com",
-                              style: TextStyle(
-                                color: AppColors.white,
-                                fontSize: fontSizePequena,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+          IntrinsicHeight(
+            child: Container(
+              width: containerWidth,
+              decoration: BoxDecoration(
+                color: AppColors.darkblue.withOpacity(0.9),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.shadowblue.withOpacity(0.8),
+                    spreadRadius: 2,
+                    offset: Offset(borda, borda * 0.5),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    MouseRegion(
+                ],
+              ),
+              padding: EdgeInsets.only(top: pad, bottom: pad),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 30),
+                    child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: GestureDetector(
                         onTap: () async {
-                          await launchUrl(Uri.parse("https://github.com/MatheusConaga"),mode: LaunchMode.externalApplication);
+                          final Uri emailUri = Uri.parse(
+                              "https://mail.google.com/mail/?view=cm&fs=1&to=matheusphillip170@gmail.com&su=Contato%20via%20Portfólio");
+                          if (await canLaunchUrl(emailUri)) {
+                            await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+                          } else {
+                            print("Não foi possível abrir o Gmail");
+                          }
                         },
-                        child: Image.asset(
-                          "assets/tecno/github.png",
-                          width: imageSize,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                                "assets/tecno/email.png",
+                                width: imageSize
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: pad),
+                              child: Text(
+                                "matheusphillip170@gmail.com",
+                                style: TextStyle(
+                                  color: AppColors.white,
+                                  fontSize: fontSizePequena,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                    SizedBox(width: largura * 0.03,),
-                    MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: GestureDetector(
-                        onTap: () async{
-                          await launchUrl(Uri.parse("https://linkedin.com/in/matheusconaga-devmobile"), mode: LaunchMode.externalApplication);
-                        },
-                        child: Image.asset(
-                          "assets/tecno/linkedin.png",
-                          width: imageSize,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () async {
+                            await launchUrl(Uri.parse("https://github.com/MatheusConaga"),mode: LaunchMode.externalApplication);
+                          },
+                          child: Image.asset(
+                            "assets/tecno/github.png",
+                            width: imageSize,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      SizedBox(width: pad),
+                      MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () async{
+                            await launchUrl(Uri.parse("https://linkedin.com/in/matheusconaga-devmobile"), mode: LaunchMode.externalApplication);
+                          },
+                          child: Image.asset(
+                            "assets/tecno/linkedin.png",
+                            width: imageSize,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],
