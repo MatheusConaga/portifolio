@@ -36,21 +36,21 @@ class Tecnologias extends StatelessWidget {
                       children: [
                         Tecno(
                           title: "Flutter",
-                          image: "assets/tecno/flutter.png",
+                          image: "assets/tecno/flutter.webp",
                         ),
                         SizedBox(
                           height: largura * 0.015,
                         ),
                         Tecno(
                           title: "React Native",
-                          image: "assets/tecno/react.png",
+                          image: "assets/tecno/react.webp",
                         ),
                         SizedBox(
                           height: largura * 0.015,
                         ),
                         Tecno(
                           title: "Kotlin",
-                          image: "assets/tecno/kotlin.png",
+                          image: "assets/tecno/kotlin.webp",
                         ),
                       ],
                     ),
@@ -66,21 +66,21 @@ class Tecnologias extends StatelessWidget {
                       children: [
                         Tecno(
                           title: "JavaScript",
-                          image: "assets/tecno/js.png",
+                          image: "assets/tecno/js.webp",
                         ),
                         SizedBox(
                           height: largura * 0.015,
                         ),
                         Tecno(
                           title: "Typescript",
-                          image: "assets/tecno/ts.png",
+                          image: "assets/tecno/ts.webp",
                         ),
                         SizedBox(
                           height: largura * 0.015,
                         ),
                         Tecno(
                           title: "Python",
-                          image: "assets/tecno/python.png",
+                          image: "assets/tecno/python.webp",
                         ),
                       ],
                     ),
@@ -96,21 +96,21 @@ class Tecnologias extends StatelessWidget {
                      children: [
                        Tecno(
                          title: "Firebase",
-                         image: "assets/tecno/firebase.png",
+                         image: "assets/tecno/firebase.webp",
                        ),
                        SizedBox(
                          height: largura * 0.015,
                        ),
                        Tecno(
                          title: "MongoDB",
-                         image: "assets/tecno/mongo.png",
+                         image: "assets/tecno/mongo.webp",
                        ),
                        SizedBox(
                          height: largura * 0.015,
                        ),
                        Tecno(
                          title: "Postgress",
-                         image: "assets/tecno/postg.png",
+                         image: "assets/tecno/postg.webp",
                        ),
                      ],
                    ),

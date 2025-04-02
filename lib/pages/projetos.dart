@@ -16,8 +16,6 @@ class _ProjetosState extends State<Projetos> {
   @override
   Widget build(BuildContext context) {
 
-    var largura = MediaQuery.of(context).size.width;
-
     return Column(
       children: [
         Secao(titulo: "Projetos"),
@@ -30,23 +28,23 @@ class _ProjetosState extends State<Projetos> {
               ProjectItem(
                 title: "Delta Comerce",
                 descript: "Sistema de postagem e compra de produtos",
-                image: "assets/projeto/deltacomerce.png",
+                image: "assets/projeto/deltacomerce.webp",
                 link: "https://github.com/MatheusConaga/olx_clone",
               ),
               ProjectItem(
                 title: "Em Breve!",
-                image: "assets/projeto/indisponivel.png",
+                image: "assets/projeto/indisponivel.webp",
                 // link: "https://github.com/MatheusConaga/olx_clone",
               ),
               ProjectItem(
                 title: "Em Breve!",
-                image: "assets/projeto/indisponivel.png",
+                image: "assets/projeto/indisponivel.webp",
                 // link: "https://github.com/MatheusConaga/olx_clone",
               ),
             ],
           ),
         ),
-        SizedBox(height: largura * 0.04),
+        SizedBox(height: 30,),
         Button(title: "Ver todos os trabalhos"),
       ],
     );

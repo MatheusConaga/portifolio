@@ -85,9 +85,9 @@ class _InicioState extends State<Inicio> {
 
   @override
   Widget build(BuildContext context) {
-    var largura = MediaQuery.of(context).size.width ;
-    var altura = MediaQuery.of(context).size.height;
-    var alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
+    double largura = MediaQuery.of(context).size.width ;
+    double altura = MediaQuery.of(context).size.height;
+    double alturaBarraStatus = MediaQuery.of(context).padding.top + 30;
 
     double fontSizeGrande = Responsive.isMobile(context) ? 22 : (Responsive.isTablet(context) ? 24 : 30);
 
@@ -111,6 +111,7 @@ class _InicioState extends State<Inicio> {
 
 
     return Scaffold(
+      backgroundColor: AppColors.bgblue,
       appBar: AppBar(
         toolbarHeight: Dbar,
         title: Row(
@@ -148,7 +149,7 @@ class _InicioState extends State<Inicio> {
               ),
               child: ClipOval(
                 child: Image.asset(
-                  "assets/images/logo_lula.png",
+                  "assets/images/logo_lula.webp",
                   width: imageSize,
                   height: imageSize,
                   fit: BoxFit.cover,
@@ -175,7 +176,7 @@ class _InicioState extends State<Inicio> {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("assets/images/barcolor.png"),
+              image: AssetImage("assets/images/barcolor.webp"),
               fit: BoxFit.cover,
             ),
           ),

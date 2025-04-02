@@ -16,7 +16,7 @@ class _ContatoState extends State<Contato> {
   @override
   Widget build(BuildContext context) {
 
-    var largura = MediaQuery.of(context).size.width ;
+    double largura = MediaQuery.of(context).size.width ;
 
     double fontSizePequena = Responsive.isMobile(context) ? 14 : (Responsive.isTablet(context) ? 18 : 20);
 
@@ -90,7 +90,7 @@ class _ContatoState extends State<Contato> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
-                              "assets/tecno/email.png",
+                              "assets/tecno/email.webp",
                               width: imageSize,
                             ),
                             Padding(
@@ -118,7 +118,7 @@ class _ContatoState extends State<Contato> {
                             await launchUrl(Uri.parse("https://github.com/MatheusConaga"),mode: LaunchMode.externalApplication);
                           },
                           child: Image.asset(
-                            "assets/tecno/github.png",
+                            "assets/tecno/github.webp",
                             width: imageSize,
                           ),
                         ),
@@ -131,7 +131,7 @@ class _ContatoState extends State<Contato> {
                             await launchUrl(Uri.parse("https://linkedin.com/in/matheusconaga-devmobile"), mode: LaunchMode.externalApplication);
                           },
                           child: Image.asset(
-                            "assets/tecno/linkedin.png",
+                            "assets/tecno/linkedin.webp",
                             width: imageSize,
                           ),
                         ),
@@ -144,7 +144,7 @@ class _ContatoState extends State<Contato> {
                             await launchUrl(Uri.parse("https://www.instagram.com/lula.dev?igsh=Z29oYm1pNDVidnp6"), mode: LaunchMode.externalApplication);
                           },
                           child: Image.asset(
-                            "assets/tecno/insta.png",
+                            "assets/tecno/insta.webp",
                             width: imageSize,
                           ),
                         ),

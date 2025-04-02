@@ -9,7 +9,7 @@ class Direitos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var largura = MediaQuery.of(context).size.width ;
+    double largura = MediaQuery.of(context).size.width;
     double fontSizePequeno = Responsive.isMobile(context) ? 12 : (Responsive.isTablet(context) ? 18 : 20);
 
 

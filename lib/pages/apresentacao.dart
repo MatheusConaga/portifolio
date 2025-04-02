@@ -59,7 +59,7 @@ class _ApresentacaoState extends State<Apresentacao> {
               width: imageSize * 0.02,
             ),
             image: DecorationImage(
-              image: AssetImage("assets/images/perfil_port.png"),
+              image: AssetImage("assets/images/perfil_port.webp"),
               fit: BoxFit.cover,
             ),
           ),
